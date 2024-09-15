@@ -1,0 +1,22 @@
+import 'package:eltohamyecommerceadminapp/controller/categories/editcatController.dart';
+import 'package:eltohamyecommerceadminapp/core/constant/mycolors.dart';
+import 'package:eltohamyecommerceadminapp/view/widget/orders/customMaterialButton.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class CustomEditButton extends StatelessWidget {
+  void Function()? onPressed;
+  final String text;
+  CustomEditButton({super.key, this.onPressed , required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: EdgeInsets.all(20),
+        child: CustomMaterialButton(
+            title: text,
+            color: AppColor.secondarycolor,
+            textcolor: AppColor.white,
+            onPressed: onPressed));
+  }
+}
