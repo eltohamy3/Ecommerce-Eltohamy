@@ -59,20 +59,7 @@ function printsuccess(array $data = null, $message = "none")
 }
 
 
-// function checkAuthenticate()
-// {
-//    if (isset($_SERVER['PHP_AUTH_USER'])  && isset($_SERVER['PHP_AUTH_PW'])) {
 
-//       if ($_SERVER['PHP_AUTH_USER'] != "abdo" ||  $_SERVER['PHP_AUTH_PW'] != "eltoo*") {
-//          header('WWW-Authenticate: Basic realm="My Realm"');
-//          header('HTTP/1.0 401 Unauthorized');
-//          echo 'Page Not Found';
-//          exit;
-//       }
-//    } else {
-//       exit;
-//    }
-// }
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -101,12 +88,12 @@ function sendEmil(string $to, string $tile, string $body, bool $output = true)
       $mail->isSMTP();                                            //Send using SMTP
       $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $mail->Username   = 'elitegame178@gmail.com';                     //SMTP username
-      $mail->Password   = 'kpqkvcyywyonbyoh';                               //SMTP password
+      $mail->Username   = '';                     //SMTP username
+      $mail->Password   = '';                               //SMTP password
       $mail->SMTPSecure = 'ssl';    //Enable implicit TLS encryption
       $mail->Port       = 465;              // 465 for ssl  and 587 for tls    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
       //Recipients
-      $mail->setFrom('elitegame178@gmail.com');
+      $mail->setFrom('');
       $mail->addAddress($to);     //Add a recipient // recever
 
       $mail->isHTML(true);                                  //Set email format to HTML
